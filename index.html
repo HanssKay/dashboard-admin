@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Dashboard Container -->
+    <div class="max-w-4xl mx-auto py-8 px-4">
+
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">Admin Dashboard</h1>
+            <p class="text-gray-600">Mengelola kunjungan, postingan, dan komentar</p>
+        </header>
+
+        <!-- Stats Section -->
+        <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="bg-blue-500 text-white rounded-lg p-4 shadow-lg">
+                <h2 class="text-xl font-semibold">Total Kunjungan</h2>
+                <p id="visitorCount" class="text-2xl font-bold">0</p>
+            </div>
+            <div class="bg-green-500 text-white rounded-lg p-4 shadow-lg">
+                <h2 class="text-xl font-semibold">Total Komentar</h2>
+                <p id="commentCount" class="text-2xl font-bold">0</p>
+            </div>
+        </div>
+
+        <!-- Chart Section -->
+        <div class="bg-white rounded-lg p-4 shadow-lg mb-8">
+            <h2 class="text-lg font-semibold text-center mb-4">Grafik Kunjungan dan Komentar (Bulanan)</h2>
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <!-- Add Post Section -->
+        <div class="bg-white rounded-lg p-4 shadow-lg mb-8">
+            <h2 class="text-lg font-semibold mb-4">Tambah Postingan Baru</h2>
+            <input type="text" id="postTitle" placeholder="Judul Post" class="w-full border rounded p-2 mb-2" />
+            <textarea id="postContent" placeholder="Isi Post" class="w-full border rounded p-2 mb-4"></textarea>
+            <button onclick="addPost()" class="w-full bg-blue-600 text-white rounded p-2 hover:bg-blue-700">Tambah Post</button>
+        </div>
+
+        <!-- Post List Section -->
+        <div id="postContainer" class="space-y-4"></div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
